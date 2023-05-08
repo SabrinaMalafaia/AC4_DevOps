@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'mudar123'
 app.config['MYSQL_DATABASE_DB'] = 'teste'
-app.config['MYSQL_DATABASE_HOST'] = '172.17.0.2'
+app.config['MYSQL_DATABASE_HOST'] = 'db'
 mysql.init_app(app)
 
 @app.route('/')
@@ -39,5 +39,5 @@ def listar():
   return render_template('lista.html', datas=data)
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5008))
+    port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
